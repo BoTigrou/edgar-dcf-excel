@@ -1,0 +1,22 @@
+Private Sub Worksheet_Change(ByVal Target As Range)
+    Dim TickerCell As Range
+    Set TickerCell = Me.Range("C7")
+    
+    ' Check if the cell that was changed is C7
+    If Not Application.Intersect(TickerCell, Target) Is Nothing Then
+        ' Avoid triggering the script if C8 is cleared/empty
+        If Trim(TickerCell.Value) <> "" Then
+            
+            ' Disable events so the macro updates don't trigger this code again
+            Application.EnableEvents = False
+            On Error GoTo CleanExit
+            
+            ' Run the EDGAR pull
+            Call FetchAndPopulateEDGAR
+            
+CleanExit:
+            ' Re-enable events no matter what
+            Application.EnableEvents = True
+        End If
+    End If
+End Sub

@@ -1,0 +1,11 @@
+[project]
+name = "edgar-dcf-excel"
+version = "0.1.0"
+description = "SEC EDGAR historical financials pull for DCF modeling"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "edgartools>=2.15.0",
+    "pandas>=2.0.0",
+    "openpyxl>=3.1.0"
+]

@@ -1,0 +1,20 @@
+# Python virtual environment & cache
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Excel temporary lock files
+~$*.xlsx
+~$*.xlsm
+
+# Generated company workbooks (keep templates tracked)
+DCF_Model_AVGO.xlsx
+DCF_Model_NVDA.xlsx
+DCF_Model_UBER.xlsx
+DCF_Model_UBER.xlsm
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
